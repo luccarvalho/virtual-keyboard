@@ -1,0 +1,9 @@
+:root {
+  --branco-textos: #ffffff;
+  --cor-de-fundo: #00030c;
+}
+
+body {
+  background-image: url(img/keyboard.jpg);
+  color: var(--branco-textos);
+}
