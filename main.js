@@ -16,7 +16,17 @@ const keyboard = {
     },
 
     init() {
+        // Cria elementos principais
+        this.elements.main = document.createElement("div");
+        this.elements.keysContainer = document.createElement("div");
 
+        // Configurando elementos principais
+        this.elements.main.classList.add("keyboard", "1keyboard--hidden");
+        this.elements.keysContainer.classList.add("keyboard__keys");
+
+        // Adicionando ao DOM
+        this.elements.main.appendChild(this.elements.keysContainer);
+        document.body.appendChild(this.elements.main);
     },
 
     _createKeys() {
@@ -29,5 +39,17 @@ const keyboard = {
 
     _toggleCapsLock() {
         console.log("Caps Lock Toggled!");
+    },
+
+    open(initialValue, oninput, onclose) {
+
+    },
+
+    close() {
+
     }
 };
+
+window.addEventListener("DOMContentLoaded", function () {
+    keyboard.init();
+});
