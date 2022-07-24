@@ -21,7 +21,7 @@ const keyboard = {
         this.elements.keysContainer = document.createElement("div");
 
         // Configurando elementos principais
-        this.elements.main.classList.add("keyboard", "1keyboard--hidden");
+        this.elements.main.classList.add("keyboard", "keyboard--hidden");
         this.elements.keysContainer.classList.add("keyboard__keys");
         this.elements.keysContainer.appendChild(this._createKeys());
 
@@ -30,6 +30,15 @@ const keyboard = {
         // Adicionando ao DOM
         this.elements.main.appendChild(this.elements.keysContainer);
         document.body.appendChild(this.elements.main);
+
+        // Ativa o teclado automaticamente para elementos com a classe .use-keyboard-input
+        document.querySelectorAll(".use-keyboard-input").forEach(element => {
+            element.addEventListener("focus", () => {
+                this.open(element.value, currentValue => {
+                    element.value = currentValue;
+                })
+            })
+        })
     },
 
     _createKeys() {
@@ -132,7 +141,9 @@ const keyboard = {
     },
 
     _triggerEvent(handlerName) {
-        console.log("Event Triggered! Event Name: " + handlerName);
+        if (typeof this.eventHandlers[handlerName] == "function") {
+            this.eventHandlers[handlerName](this.properties.value);
+        }
     },
 
     _toggleCapsLock() {
@@ -146,14 +157,25 @@ const keyboard = {
     },
 
     open(initialValue, oninput, onclose) {
-
+        this.properties.value = initialValue || "";
+        this.eventHandlers.oninput = oninput;
+        this.eventHandlers.onclose = onclose;
+        this.elements.main.classList.remove("keyboard--hidden");
     },
 
     close() {
-
+        this.properties.value = "";
+        this.eventHandlers.oninput = oninput;
+        this.eventHandlers.onclose = onclose;
+        this.elements.main.classList.add("keyboard--hidden");
     }
 };
 
 window.addEventListener("DOMContentLoaded", function () {
     keyboard.init();
+    // keyboard.open("dcode", function (currentValue) {
+    //     console.log(currentValue);
+    // }, function (currentValue) {
+    //     console.log("Keyboard closed! Finishing value: " + currentValue);
+    // })
 });
