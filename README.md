@@ -1,6 +1,10 @@
 # virtual-keyboard
 
+## :dart: Objetivo do projeto:
+
 Criação de um teclado virtual, totalmente funcional e responsivo.
+
+## :receipt: Descrição do projeto:
 
 Projeto com uma página simples, onde o teclado virtual é “acionado” assim que o usuário clica no campo de texto, tendo uma tecla específica para deixar o teclado oculto novamente.
 
