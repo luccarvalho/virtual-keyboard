@@ -1,17 +1,21 @@
-# virtual-keyboard
+<h1 align="center">Virtual Keyboard</h1>
 
-## :dart: Objetivo do projeto:
+![Template Virtual Keyboard](src/assets/tecladovirtual_to_readme.png)
 
-Criação de um teclado virtual, totalmente funcional e responsivo.
+## Descrição e objetivo do projeto
 
-## :receipt: Descrição do projeto:
+O objetivo foi criar um teclado virtual, totalmente funcional e responsivo, utilizando JavaScript.
 
-Projeto com uma página simples, onde o teclado virtual é “acionado” assim que o usuário clica no campo de texto, tendo uma tecla específica para deixar o teclado oculto novamente.
+Projeto com uma página simples, onde o teclado virtual é acionado assim que o usuário clica no campo de texto, tendo uma tecla específica para deixar o teclado oculto novamente.
 
-A tecla de Caps Lock quando clicada, “acende” um identificador visual para lembrar o usuário que a mesma está acionada, além de transformar a visualização das letras em maiúsculas no teclado e obviamente no texto.
+O teclado virtual possui todas as funcionalidades padrão de um teclado, como um identificador "luminoso" ao acionar a tecla Caps Lock, para mostrar ao usuário que a função de letras maiúsculas está ativa.
 
-## :heavy_check_mark: Técnologias utilizadas:
+## :heavy_check_mark: Tecnologias utilizadas
 
 - `HTML`
 - `CSS`
 - `JavaScript`
+
+## :link: Acesso ao projeto
+
+Você pode acessar o deploy do projeto na Vercel clicando [aqui](https://virtual-keyboard-luccarvalho.vercel.app/).
